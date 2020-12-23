@@ -16,6 +16,8 @@ package chart
 
 import (
 	"context"
+	"encoding/json"
+	"fmt"
 
 	"github.com/gardener/gardener/pkg/chartrenderer"
 	gardenerkubernetes "github.com/gardener/gardener/pkg/client/kubernetes"
@@ -114,6 +116,8 @@ func (c *Chart) injectImages(
 	values := make(map[string]interface{})
 	var err error
 	if len(c.Images) > 0 {
+		s, _ := json.MarshalIndent(imageVector, "", "\t")
+		fmt.Printf("Calling InjectImages with args values: %v, imageVector: %v, c.Images: %v, runtime: %v, target: %v\n", values, string(s), c.Images, runtimeVersion, targetVersion)
 		values, err = InjectImages(values, imageVector, c.Images, imagevector.RuntimeVersion(runtimeVersion), imagevector.TargetVersion(targetVersion))
 		if err != nil {
 			return nil, errors.Wrapf(err, "could not inject chart '%s' images", c.Name)
