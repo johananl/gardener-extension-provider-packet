@@ -21,6 +21,11 @@ images:
   repository: quay.io/k8scsi/csi-attacher
   tag: v1.1.0
   runtimeVersion: 1.14.x
+- name: csi-attacher
+  sourceRepository: https://github.com/kubernetes-csi/external-attacher
+  repository: quay.io/k8scsi/csi-attacher
+  tag: v3.1.0
+  runtimeVersion: 1.18.x
 - name: csi-node-driver-registrar
   sourceRepository: https://github.com/kubernetes-csi/node-driver-registrar
   repository: quay.io/k8scsi/csi-node-driver-registrar
@@ -31,6 +36,11 @@ images:
   repository: quay.io/k8scsi/csi-node-driver-registrar
   tag: v1.1.0
   runtimeVersion: 1.14.x
+- name: csi-node-driver-registrar
+  sourceRepository: https://github.com/kubernetes-csi/node-driver-registrar
+  repository: quay.io/k8scsi/csi-node-driver-registrar
+  tag: v2.1.0
+  runtimeVersion: 1.18.x
 - name: csi-provisioner
   sourceRepository: https://github.com/kubernetes-csi/external-provisioner
   repository: quay.io/k8scsi/csi-provisioner
@@ -41,6 +51,11 @@ images:
   repository: quay.io/k8scsi/csi-provisioner
   tag: v1.1.0
   runtimeVersion: 1.14.x
+- name: csi-provisioner
+  sourceRepository: https://github.com/kubernetes-csi/external-provisioner
+  repository: quay.io/k8scsi/csi-provisioner
+  tag: v2.1.0
+  runtimeVersion: 1.18.x
 - name: packet-storage-interface
   sourceRepository: https://github.com/packethost/csi-packet
   repository: docker.io/packethost/csi-packet
